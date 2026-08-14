@@ -399,14 +399,41 @@
     border-color:var(--coral);
     box-shadow:0 16px 40px rgba(232,98,63,0.18);
   }
+  .price-card.campaign{
+    border-color:var(--yellow);
+    box-shadow:0 16px 40px rgba(255,201,74,0.28);
+  }
   .price-tag{
     position:absolute; top:-14px; left:28px;
     background:var(--coral); color:#fff;
     font-size:0.75rem; font-weight:700;
     padding:5px 14px; border-radius:999px;
   }
+  .price-tag.campaign-tag{
+    background:var(--yellow);
+    color:var(--navy);
+  }
   .price-card h3{font-size:1.2rem; margin-bottom:6px;}
   .price-card .desc{font-size:0.88rem; color:var(--navy-soft); margin-bottom:20px;}
+  .price-line{
+    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    margin-bottom:20px;
+  }
+  .price-line .price-strike{
+    font-size:1rem; color:var(--navy-soft);
+    text-decoration:line-through; opacity:0.7;
+  }
+  .price-line .price-now{
+    font-size:1.8rem; font-weight:800; color:var(--coral-dark);
+    font-family:'M PLUS Rounded 1c',sans-serif;
+  }
+  .price-line .price-unit{font-size:0.85rem; color:var(--navy-soft);}
+  .price-line .price-off{
+    font-size:0.75rem; font-weight:700;
+    background:rgba(255,201,74,0.35);
+    color:var(--coral-dark);
+    padding:4px 10px; border-radius:999px;
+  }
   .price-card ul{list-style:none; margin-bottom:0;}
   .price-card ul li{
     font-size:0.9rem; color:var(--navy);
@@ -418,36 +445,17 @@
     position:absolute; left:0; top:6px;
     color:var(--coral-dark); font-weight:700;
   }
-  .price-base{
+  .campaign-note-box{
     max-width:820px;
-    margin:0 auto;
-    background:var(--white);
-    border-radius:24px;
-    padding:30px 34px;
-    display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap;
-    gap:16px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.04);
-  }
-  .price-base .left h3{font-size:1.05rem; margin-bottom:6px;}
-  .price-base .left p{font-size:0.85rem; color:var(--navy-soft);}
-  .price-base .right{text-align:right;}
-  .price-base .amount{font-size:2rem; font-weight:800; color:var(--coral-dark); font-family:'M PLUS Rounded 1c',sans-serif;}
-  .price-base .unit{font-size:0.85rem; color:var(--navy-soft);}
-  .price-base .strike{
-    font-size:1.1rem;
-    color:var(--navy-soft);
-    text-decoration:line-through;
-    opacity:0.7;
-  }
-  .campaign-note{
-    max-width:820px;
-    margin:16px auto 0;
+    margin:0 auto 20px;
     text-align:center;
-    font-size:0.9rem;
-    color:var(--coral-dark);
-    font-weight:700;
+    background:rgba(255,201,74,0.15);
+    border-radius:18px;
+    padding:20px 26px;
   }
+  .campaign-note-box p{font-size:0.95rem; color:var(--navy); margin-bottom:6px;}
+  .campaign-note-box p:last-child{margin-bottom:0;}
+  .campaign-note-box p.small{font-size:0.82rem; color:var(--navy-soft);}
   .note-box{
     max-width:820px;
     margin:24px auto 0;
@@ -461,8 +469,6 @@
   .note-box strong{color:var(--navy);}
   @media (max-width:760px){
     .price-grid{grid-template-columns:1fr;}
-    .price-base{flex-direction:column; align-items:flex-start; text-align:left;}
-    .price-base .right{text-align:left;}
   }
 
   /* Flow */
@@ -573,7 +579,7 @@
         <a href="#cta" class="btn">🐧 LINEで申し込む</a>
         <a href="#about" class="btn outline">サービスを見る</a>
       </div>
-      <p class="hero-note">オンライン60分・4,400円（キャンペーン中）｜プライベート利用もイベント利用もOK</p>
+      <p class="hero-note">オンライン60分 5,500円〜｜公開に協力いただける方は今だけ4,400円（先着10名）</p>
     </div>
     <div class="hero-visual">
       <div class="hero-photo">
@@ -688,26 +694,35 @@
 <section class="pricing" id="pricing">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">料金・コース</span>
-      <h2 class="section-title">シンプルな料金体系</h2>
-      <p class="section-sub">利用シーンに合わせて2つのコースからお選びいただけます。</p>
+      <span class="eyebrow">🐧 わくわくワーク100人プロジェクト</span>
+      <h2 class="section-title">一緒に、わくわくの輪を広げてください</h2>
+      <p class="section-sub">あなたのモヤモヤ→ワクワクになる60分を公開していただける方を、今だけ先着10名様限定で募集しています。</p>
     </div>
 
     <div class="price-grid">
       <div class="price-card highlight">
-        <span class="price-tag">プライベート向け</span>
+        <span class="price-tag">プライベート向け・通常</span>
         <h3>🤫 コッソリコース</h3>
         <p class="desc">誰にも知られず、じっくり自分と向き合いたい方に。</p>
+        <div class="price-line">
+          <span class="price-now">¥5,500</span>
+          <span class="price-unit">/ 60分</span>
+        </div>
         <ul>
           <li>非公開セッション</li>
           <li>秘密は厳守します</li>
           <li>グラレコデータお渡し</li>
         </ul>
       </div>
-      <div class="price-card highlight">
-        <span class="price-tag">PR・イベント向け</span>
+      <div class="price-card highlight campaign">
+        <span class="price-tag campaign-tag">先着10名様・今だけ</span>
         <h3>📣 ババンとコース</h3>
-        <p class="desc">各種SNSでライブ配信しながら、イベントのPRにも活用したい方に。</p>
+        <p class="desc">わくわくワークを一緒に広めてくれる方に。公開へのご協力のお礼です。</p>
+        <div class="price-line">
+          <span class="price-strike">¥5,500</span>
+          <span class="price-now">¥4,400</span>
+          <span class="price-off">1,100円OFF</span>
+        </div>
         <ul>
           <li>各種SNSでライブ配信（配信はお客様側にお願いします）</li>
           <li>シェア・拡散は喜んでご協力します</li>
@@ -716,21 +731,14 @@
       </div>
     </div>
 
-    <div class="price-base">
-      <div class="left">
-        <h3>基本料金</h3>
-        <p>オンライン60分のセッション費用です</p>
-      </div>
-      <div class="right">
-        <div class="strike">¥5,500</div>
-        <div class="amount">¥4,400</div>
-        <div class="unit">/ 60分・オンライン</div>
-      </div>
+    <div class="campaign-note-box">
+      <p>🐧「公開して、一緒にわくわくの輪を広げてくれるお礼に、1,100円OFFにしています。値引きというより、広報にご協力いただく分の“お礼”です。」</p>
+      <p class="small">先着10名様の公開事例ができた時点で、このプロジェクトは一旦終了予定です。</p>
     </div>
-    <p class="campaign-note">🌟「ホリベックス、Zoomを有料版にする勇気がありませんキャンペーン」中につき、しばらくこの価格でご案内します！</p>
 
     <div class="note-box">
       <p><strong>📎 Zoomについて</strong></p>
+      <p>現在ホリベックスがZoom無料版のため、ババンとコースは60分開催用のZoom（有料版）をご用意いただける方が対象です。</p>
       <p>ホリベの無料版URLをご利用の場合、ライブ配信はできません。40分経過後に一度入り直していただき、合計60分になります。</p>
       <p>お客様の有料版URLをご用意いただく場合は、お客様のアカウントでライブ配信していただいても、しなくてもどちらでもOKです。</p>
     </div>
@@ -800,7 +808,7 @@
       </div>
       <div class="faq-item">
         <h3><span class="q-mark">Q.</span> コッソリコースとババンとコースの違いは？</h3>
-        <p>コッソリコースは非公開・秘密厳守、ババンとコースはお客様ご自身のSNSでライブ配信しながら行う、イベントPR向けのコースです。配信のシェア・拡散は喜んでご協力します。</p>
+        <p>コッソリコースは非公開・秘密厳守の通常コース（5,500円）。ババンとコースはお客様ご自身のSNSでライブ配信しながら行うコースで、公開にご協力いただくお礼として今だけ4,400円（先着10名様）でご案内しています。配信のシェア・拡散は喜んでご協力します。</p>
       </div>
       <div class="faq-item">
         <h3><span class="q-mark">Q.</span> セッション後に何が受け取れますか？</h3>
@@ -817,7 +825,7 @@
 <section class="final-cta" id="cta">
   <div class="wrap">
     <h2>🐧 まずは気軽に話してみませんか？</h2>
-    <p>モヤモヤは、見える形にすると少し愛おしくなるかもしれません。LINEから気軽にお申し込みください。</p>
+    <p>モヤモヤは、見える形にすると少し愛おしくなるかもしれません。わくわくワーク100人プロジェクトでは、公開に協力してくれる方を先着10名様限定で募集中です。LINEから気軽にお申し込みください。</p>
     <a href="https://lin.ee/v8ls2fQ2" class="btn" target="_blank" rel="noopener">LINEで申し込む</a>
   </div>
 </section>
