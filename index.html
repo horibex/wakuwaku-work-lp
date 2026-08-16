@@ -439,34 +439,26 @@
     border-radius:12px;
     padding:12px 14px;
   }
-  .referral-grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:28px;
-    max-width:820px;
-    margin:0 auto;
-  }
-  .referral-card{
-    background:var(--white);
-    border-radius:24px;
-    padding:32px 28px;
-    text-align:center;
-    box-shadow:0 8px 24px rgba(0,0,0,0.04);
-  }
-  .referral-card .referral-icon{font-size:2.2rem; margin-bottom:14px;}
-  .referral-card h3{font-size:1.05rem; margin-bottom:10px;}
-  .referral-card p{font-size:0.9rem; color:var(--navy-soft);}
-  .referral-strike{
-    text-decoration:line-through; opacity:0.7;
-    font-size:0.95rem; color:var(--navy-soft);
-  }
-  .referral-price{
-    font-weight:800; font-size:1.3rem; color:var(--coral-dark);
-    font-family:'M PLUS Rounded 1c',sans-serif;
-  }
   @media (max-width:760px){
     .price-grid{grid-template-columns:1fr;}
-    .referral-grid{grid-template-columns:1fr;}
+  }
+
+  /* Referral (mini) */
+  .referral-mini{padding:0 0 90px;}
+  .referral-mini-box{
+    max-width:760px;
+    margin:0 auto;
+    background:var(--white);
+    border-radius:20px;
+    padding:24px 28px;
+    display:flex; align-items:flex-start; gap:18px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.04);
+  }
+  .referral-mini-icon{font-size:1.8rem; flex-shrink:0;}
+  .referral-mini-title{font-weight:700; color:var(--navy); margin-bottom:6px;}
+  .referral-mini-text{font-size:0.88rem; color:var(--navy-soft);}
+  @media (max-width:600px){
+    .referral-mini-box{flex-direction:column; align-items:center; text-align:center;}
   }
 
   /* Flow */
@@ -687,7 +679,7 @@
         <p>グラレコで見える化することにより、自分を客観的に見ることができます。</p>
       </div>
     </div>
-    <p class="problem-shout" style="margin-top:56px;">目指すべきあなたの未来を<br>一緒に描きたい</p>
+    <p class="problem-shout" style="margin-top:56px;">「あなたのなりたい自分」<br>未来を描くお手伝いをします</p>
   </div>
 </section>
 
@@ -696,7 +688,7 @@
     <div class="section-head center">
       <span class="eyebrow">料金・コース</span>
       <h2 class="section-title">シンプルな料金体系</h2>
-      <p class="section-sub">利用シーンに合わせて2つのコースからお選びいただけます。</p>
+      <p class="section-sub">料金はどちらも5,500円。誰にも知られず話したいか、公開してみんなに知ってもらいたいか、お好きな方をお選びください。</p>
     </div>
 
     <div class="price-grid">
@@ -726,24 +718,6 @@
           <li>シェア拡散ご協力いたします</li>
         </ul>
         <p class="price-highlight-line">🎪 イベント・広報にも最適</p>
-      </div>
-    </div>
-
-    <div class="section-head center" style="margin-top:70px;">
-      <span class="eyebrow">🎁 紹介プログラム</span>
-      <h2 class="section-title" style="font-size:1.5rem;">紹介で、もっとわくわくを</h2>
-      <p class="section-sub">わくわくワークを誰かに紹介していただくと、紹介した方・された方どちらにも嬉しい特典があります。</p>
-    </div>
-    <div class="referral-grid">
-      <div class="referral-card">
-        <div class="referral-icon">🎨</div>
-        <h3>紹介してくれた方に</h3>
-        <p>ホリベックスが描くオリジナルSNSアイコン（3,300円相当）をプレゼントします。</p>
-      </div>
-      <div class="referral-card">
-        <div class="referral-icon">💌</div>
-        <h3>紹介で申し込んだ方は</h3>
-        <p><span class="referral-strike">¥5,500</span> <span class="referral-price">¥5,000</span>（500円OFF）でセッションを受けられます。</p>
       </div>
     </div>
   </div>
@@ -832,6 +806,18 @@
     <p>モヤモヤは、見える形にすると少し愛おしくなるかもしれません。LINEから気軽にお申し込みください。</p>
     <a href="https://lin.ee/v8ls2fQ2" class="btn" target="_blank" rel="noopener">LINEで申し込む</a>
     <p class="final-cta-note">💬 LINEで「<strong>わくわくワーク希望</strong>」とメッセージしてください</p>
+  </div>
+</section>
+
+<section class="referral-mini">
+  <div class="wrap">
+    <div class="referral-mini-box">
+      <span class="referral-mini-icon">🎁</span>
+      <div>
+        <p class="referral-mini-title">お友達紹介プログラム</p>
+        <p class="referral-mini-text">わくわくワークを紹介してくれた方には、ホリベックスが描くオリジナルSNSアイコン（3,300円相当）をプレゼント。紹介で申し込んだ方は500円OFFの¥5,000でセッションを受けられます。</p>
+      </div>
+    </div>
   </div>
 </section>
 
